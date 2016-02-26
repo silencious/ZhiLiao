@@ -14,3 +14,5 @@
 /src/client/.project
 *.bak
 *.iml
+*.jar
+*.apk
