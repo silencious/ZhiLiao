@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg" >
+ 
+ 		<LinearLayout
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+       		android:layout_below="@+id/topic_about_title"
+       		android:layout_marginLeft="10dp"
+       		android:layout_marginRight="10dp"
+        	android:orientation="vertical" >
+
+ 			<RelativeLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="wrap_content"
+ 			    android:gravity="bottom" >
+
+ 				<TextView
+ 				    android:id="@+id/textView1"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_alignParentLeft="true"
+ 				    android:layout_centerVertical="true"
+ 				    android:text="创建人"
+ 				    android:textColor="@color/bg_6"
+ 				    android:textSize="18sp" />
+
+ 				<TextView
+ 				    android:id="@+id/topic_about_creator"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_centerVertical="true"
+ 				    android:layout_marginLeft="5dp"
+ 				    android:layout_toRightOf="@+id/textView1"
+ 				    android:text="TextView"
+ 				    android:textColor="#0e5d47"
+ 				    android:textSize="24sp" />
+
+ 			</RelativeLayout>
+
+ 			<TextView
+ 			    android:id="@+id/textView2"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:textColor="@color/bg_6"
+ 			    android:textSize="18sp"
+ 			    android:text="关键词" />
+
+ 			<TextView
+ 			    android:id="@+id/topic_about_null"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:layout_marginLeft="20dp"
+ 			    android:textColor="#0e5d47"
+ 			    android:textSize="16sp"			    
+ 			    android:text="@string/empty" />
+
+ 		<LinearLayout
+       		android:id="@+id/topic_about"
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+       		android:layout_below="@+id/textView2"
+       		android:layout_marginLeft="20dp"
+       		android:layout_marginRight="210dp"
+        	android:orientation="vertical" 
+        	android:textColor="#0e5d47">
+
+ 			</LinearLayout>
+
+    	</LinearLayout>
+
+        <Button
+            android:id="@+id/topic_about_cancel"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/dialog_delete"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/topic_about_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/topic_about_cancel"
+            android:gravity="left"
+            android:text="关于本话题"
+            android:textColor="#0e5d47"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+  
+</RelativeLayout>  

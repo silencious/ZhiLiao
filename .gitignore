@@ -1,0 +1,16 @@
+/src/server/target
+/src/server/bin
+/src/server/build
+/src/server/.gradle
+/src/server/.classpath
+/src/server/.idea
+/src/server/src/test/java/com/zhiliao/client/Config.java
+/src/client/assets
+/src/client/bin
+/src/client/gen
+/src/client/target
+/src/client/project.properties
+/src/client/.classpath
+/src/client/.project
+*.bak
+*.iml

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <RelativeLayout
+        android:id="@+id/left_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/main_left_following"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/leftmenu_button_style1" />
+
+        <Button
+            android:id="@+id/divider1"
+            android:layout_width="230dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/main_left_following"
+            android:background="#55ffffff" />
+
+        <Button
+            android:id="@+id/main_left_follower"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:background="@drawable/leftmenu_button_style2"
+            android:layout_below="@+id/divider1" />
+        
+        <Button
+            android:id="@+id/divider2"
+            android:layout_width="230dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/main_left_follower"
+            android:background="#55ffffff" />
+
+        <Button
+            android:id="@+id/main_left_myinfo"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:background="@drawable/leftmenu_button_style3"
+            android:layout_below="@+id/divider2" />
+        
+        <Button
+            android:id="@+id/divider3"
+            android:layout_width="230dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/main_left_myinfo"
+            android:background="#55ffffff" />
+
+        <Button
+            android:id="@+id/main_left_account"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:background="@drawable/leftmenu_button_style4"
+            android:layout_below="@+id/divider3" />
+        
+        <Button
+            android:id="@+id/divider4"
+            android:layout_width="230dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/main_left_account"
+            android:background="#55ffffff" />
+
+        <Button
+            android:id="@+id/main_left_set"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:background="@drawable/leftmenu_button_style5"
+            android:layout_below="@+id/divider4" />
+        
+        <Button
+            android:id="@+id/divider5"
+            android:layout_width="230dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/main_left_set"
+            android:background="#55ffffff" />
+
+        
+    </RelativeLayout>
+
+</RelativeLayout>

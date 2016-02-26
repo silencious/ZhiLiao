@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login_layout"
+    android:orientation="vertical"
+    android:background="@drawable/bg1" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical" >
+        
+        
+        <RelativeLayout
+        	android:layout_width="match_parent"
+        	android:layout_height="0.5dp"
+        	android:orientation="vertical"
+        	android:layout_alignParentBottom="true"
+        	android:background="#ddd" >
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/about_ret"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="returnToMain"
+            android:background="@drawable/return_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/about"
+            android:textSize="20sp"
+            android:textColor="#34c29a" />
+
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/about_logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/version"
+        android:textColor="@color/bg_6"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/about_info_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="智能推荐你可能感兴趣的话题  "
+        android:textColor="@color/bg_3"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/about_info_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+    	android:layout_marginTop="10dp"
+        android:text=" 快速聚集与你志同道合的朋友"
+        android:textColor="@color/bg_3"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/about_info_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+       android:layout_marginTop="15dp"
+        android:text="轻松交流    "
+        android:textColor="@color/bg_3"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/about_info_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:text="    快乐交友"
+        android:textColor="@color/bg_3"
+        android:textSize="20sp" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:text="@string/team"
+        android:textColor="@color/bg_6"
+        android:textSize="16sp" />
+
+</LinearLayout>

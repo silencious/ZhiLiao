@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg" >
+
+        <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title" >
+
+   		<RadioGroup
+	        android:id="@+id/radioGroup_topic"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/bg_5" >
+
+	    </RadioGroup>
+		</ScrollView>
+
+        <CheckBox
+            android:id="@+id/cb_jump"
+            style="@style/CustomCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/scrollView1"
+            android:text="@string/jump"
+            android:textColor="#0e5d47"
+            android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/radioGroup_ok"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/scrollView1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/send" />
+
+        <Button
+            android:id="@+id/radioGroup_cancel"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/dialog_delete"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/radioGroup_cancel"
+
+            android:gravity="left"
+            android:text="@string/forward"
+            android:textColor="#0e5d47"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+  
+</RelativeLayout>  

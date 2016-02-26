@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical" >       
+        
+        <RelativeLayout
+        	android:layout_width="match_parent"
+        	android:layout_height="0.5dp"
+        	android:orientation="vertical"
+        	android:layout_alignParentBottom="true"
+        	android:background="@color/bg_3" >
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/myinfo_ret"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/return_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/myinfo"
+            android:textSize="20sp"
+            android:textColor="@color/bg_3" />
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/myinfo_logo" />
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <TableRow
+			android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp" >
+
+            <ImageView
+                 android:layout_width="0dp"
+                 android:layout_height="20dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_weight="1"
+                 android:ems="5"
+                 android:src="@drawable/user"
+                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/myInfo_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="7"
+                android:ems="10" 
+                android:textSize="28dp"
+                android:textColor="@color/bg_6"/>
+         </TableRow>
+
+         <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center" >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:ems="5"
+                android:src="@drawable/gender"
+                android:textSize="18sp" />
+
+             <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="7"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent" >
+
+                <RadioGroup
+                    android:id="@+id/myInfo_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="clip_vertical"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/myInfo_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/male_radio"
+                        android:checked="true" />
+
+                     <RadioButton
+                        android:id="@+id/myInfo_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/female_radio" />
+                </RadioGroup>
+              </LinearLayout>
+         </TableRow>
+ 
+		<TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:src="@drawable/mail"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/myInfo_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="7"
+                        android:background="@drawable/chat_editbox"
+                        android:ems="10"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/bg_6" />
+                </TableRow>
+            </TableLayout>
+            
+      <Button
+          android:id="@+id/myInfo_btn_save"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center_vertical|center_horizontal"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:layout_marginTop="40dp"
+          android:background="@drawable/btn_bg_green"
+          android:text="@string/save"
+          android:textColor="@color/bg_1"
+          android:textSize="24sp" />
+
+</LinearLayout>

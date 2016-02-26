@@ -1,0 +1,188 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_drawerLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/left_bg" >
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="320dip"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/bg_2" >
+
+        <!-- android:scrollbars="none" -->
+
+        
+        
+        <RelativeLayout
+            android:id="@+id/main_search"
+	        android:layout_width="match_parent"
+	        android:layout_marginLeft="15dp"
+	        android:layout_marginRight="15dp"
+	        android:layout_marginTop="3dp"
+	        android:layout_marginBottom="3dp"
+	        android:layout_height="32dp" 
+	        android:background="@drawable/search_bg"
+	        android:layout_below="@+id/main_head">
+            
+	        <Button
+	            android:id="@+id/main_btn_search"
+	            android:layout_width="24dp"
+	            android:layout_height="30dp"
+	            android:layout_marginRight="5dp"
+	            android:layout_marginTop="3dp"
+	            android:layout_alignParentRight="true"         
+	            android:background="@drawable/search_button1" />
+	
+	       <EditText
+	           android:id="@+id/main_et_key"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_marginLeft="20dp"
+	           android:layout_marginRight="5dp"
+	           android:layout_marginTop="3dp"
+	           android:layout_alignParentLeft="true"
+	           android:layout_toLeftOf="@+id/main_btn_search"
+	           android:background="@drawable/blank_bg"
+	           android:hint="@string/key"
+	           android:textColor="@color/bg_5"/>
+
+       </RelativeLayout>
+        
+		<RelativeLayout
+	    	android:id="@+id/id_swipe_ly"
+        	android:layout_width="fill_parent"
+        	android:layout_height="match_parent"
+        	android:layout_below="@+id/main_search"
+        	android:layout_above="@+id/main_bottom"
+        	android:background="#fff">
+        	<com.zhiliao.client.swipemenu.SwipeMenuListView
+            	android:id="@+id/main_content"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:cacheColorHint="#00000000"
+            	android:divider="@null"
+            	android:dividerHeight="0dp"
+            	android:background="#fff" />
+
+
+        </RelativeLayout>
+        
+		<ImageView
+		    android:id="@+id/main_line"
+		    android:layout_width="3dp"
+		    android:layout_height="match_parent"
+		    android:layout_marginLeft="51dp"
+		    android:background="@drawable/timeline_line" />
+
+		<RelativeLayout
+            android:id="@+id/main_head"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_centerHorizontal="true"
+            android:background="#353f49"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/app_name"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/main_create"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/create_button" />
+
+            <Button
+                android:id="@+id/main_show_left"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/menu_button"
+                android:onClick="OpenLeftMenu" />
+
+        </RelativeLayout>
+        
+		<RelativeLayout
+		    android:id="@+id/main_bottom"
+		    android:layout_width="match_parent"
+		    android:layout_height="55dp"
+		    android:layout_alignParentBottom="true"
+		    android:background="@drawable/bottombar">
+		    
+		   <LinearLayout
+		        android:id="@+id/main_bottombar"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="55dp"
+		    	android:background="#00000000" >
+
+		    	<RelativeLayout
+		    		android:layout_width="40dp"
+		    		android:layout_height="55dp"
+		    		android:layout_weight="1">
+            		<Button
+                	android:id="@+id/main_upload"
+                	android:layout_width="55dp"
+                	android:layout_height="55dp"
+                	android:layout_centerHorizontal="true"
+                	android:background="@drawable/chat_button_pressed" />
+		    	</RelativeLayout>
+		    	<RelativeLayout
+		    		android:layout_width="40dp"
+		    		android:layout_height="55dp"
+		    		android:layout_weight="1">
+            		<Button
+                	android:id="@+id/main_discover"
+                	android:layout_width="55dp"
+                	android:layout_height="55dp"
+                	android:layout_centerHorizontal="true"
+                	android:background="@drawable/discover_button" />
+		    	</RelativeLayout>
+		    	<RelativeLayout
+		    		android:layout_width="40dp"
+		    		android:layout_height="55dp"
+		    		android:layout_weight="1">
+            		<Button
+                	android:id="@+id/main_timeline"
+                	android:layout_width="55dp"
+                	android:layout_height="55dp"
+                	android:layout_centerHorizontal="true"
+                	android:background="@drawable/timeline_button" />
+		    	</RelativeLayout>
+        </LinearLayout>
+		</RelativeLayout>
+        
+		
+    </RelativeLayout>
+    <fragment
+        android:id="@+id/id_left_menu"
+        android:name="com.zhiliao.client.layout.MenuLeftFragment"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:tag="@string/left_tag" />
+
+    <fragment
+        android:id="@+id/id_right_menu"
+        android:name="com.zhiliao.client.layout.MenuRightFragment"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:tag="@string/right_tag" />
+    
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color><!--白色 -->
+	<color name="refresh_blue">#99D9EA</color>
+	<color name="bg_dark">#393b4c</color>
+	<color name="blue">#6fbec5</color>
+	<color name="red">#6fbec5</color>
+	<color name="orange">#6fbec5</color>
+    
+	<color name="bg_1">#ffffff</color>
+	<color name="bg_2">#f0f0f0</color>
+	<color name="bg_3">#16c59e</color>
+	<color name="bg_4">#e8e8e8</color>
+	<color name="bg_5">#151716</color>
+	<color name="bg_6">#81837c</color>
+	<color name="bg_7">#0e5d47</color>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhiliao"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_new_small"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.zhiliao.client.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateUnspecified|adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zhiliao.client.activity.AccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.AddFriendActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.ChatActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.FollowersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.FollowingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.FrontActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.MyInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.zhiliao.client.activity.UserActivity" android:screenOrientation="portrait"/>
+
+        <service
+            android:name="com.zhiliao.client.service.RestService"
+            android:enabled="true" />
+        <service
+            android:name="com.zhiliao.client.service.SocketService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

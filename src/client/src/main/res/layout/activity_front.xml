@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    android:orientation="vertical" 
+    android:background="#27282a">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/front_logo"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_new_sep" />
+
+        <TextView
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/front_logo"
+            android:layout_marginTop="20dp"
+            android:text="@string/app_name"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/front_loginbutton"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/front_btn"
+            android:onClick="goto_login"
+            android:text="@string/login"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/front_registerbutton"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/front_btn2"
+            android:onClick="goto_register"
+            android:text="@string/register"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg" >
+ 
+ 		<LinearLayout
+       		android:id="@+id/topic_checkboxGroup"
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+       		android:layout_below="@+id/checkboxGroup_title"
+        	android:orientation="vertical" >
+    	</LinearLayout>
+
+        <Button
+            android:id="@+id/checkboxGroup_ok"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/topic_checkboxGroup"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/send" />
+
+        <Button
+            android:id="@+id/checkboxGroup_cancel"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/dialog_delete"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/checkboxGroup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/checkbox_cancel"
+            android:layout_alignLeft="@+id/checkbox_topic"
+            android:gravity="left"
+            android:text="@string/follow"
+            android:textColor="#0e5d47"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+  
+</RelativeLayout>  

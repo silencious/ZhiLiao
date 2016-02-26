@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.springframework.org/schema/data/jpa
+   http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx.xsd
+   ">
+
+    <context:component-scan base-package="com.zhiliao.server"/>
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="mapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+    <jpa:repositories base-package="com.zhiliao.server.repository" />
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>org.postgresql.Driver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:postgresql://localhost:5432/zhiliao</value>
+        </property>
+        <property name="username">
+            <value>zhiliao</value>
+        </property>
+        <property name="password">
+            <value>zhiliao123</value>
+        </property>
+    </bean>
+
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.zhiliao.server.model" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <bean id="reflections" class="org.reflections.Reflections">
+        <constructor-arg index="0" value="com.zhiliao" />
+        <constructor-arg index="1">
+            <list>
+                <bean class="org.reflections.scanners.MethodAnnotationsScanner" />
+                <bean class="org.reflections.scanners.TypeAnnotationsScanner" />
+                <bean class="org.reflections.scanners.SubTypesScanner"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <bean id="dataModel" class="com.zhiliao.server.service.recommend.CustomDataModel" />
+    <bean id="userSimilarity" class="com.zhiliao.server.service.recommend.UserSimilarity" >
+        <constructor-arg name="dataModel" ref="dataModel" />
+    </bean>
+    <bean id="userNeighborhood" class="com.zhiliao.server.service.recommend.UserNeighbor" >
+        <constructor-arg name="dataModel" ref="dataModel" />
+        <constructor-arg name="similarity" ref="userSimilarity" />
+        <constructor-arg name="limit" value="4" />
+    </bean>
+    <bean id="userBasedRecommender" class="com.zhiliao.server.service.recommend.UserRecommender" >
+        <constructor-arg name="dataModel" ref="dataModel" />
+        <constructor-arg name="neighbor" ref="userNeighborhood" />
+    </bean>
+
+</beans:beans>

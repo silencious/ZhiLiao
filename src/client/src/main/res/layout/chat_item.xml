@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/chat_item"
+    android:background="@color/bg_1" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="18dp" >
+
+            <TextView
+                android:id="@+id/chat_item_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forward"
+                android:textColor="@color/bg_6" />
+
+            <TextView
+                android:id="@+id/chat_item_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/reply"
+                android:textColor="@color/bg_6" />
+
+            <TextView
+                android:id="@+id/chat_item_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/bg_6" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/chat_item_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/bg_5"
+            android:textSize="24dp" />
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/chat_item_receiver_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <TextView
+            android:id="@+id/chat_item_refer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/chat_item_receiver"
+            android:text="@string/reply_to"
+            android:textColor="@color/bg_6"
+            android:textSize="20dp"          
+             />
+
+        <TextView
+            android:id="@+id/chat_item_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/chat_item_refer"
+            android:textColor="@color/bg_5"
+            android:textSize="22dp"
+             />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2" 
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/chat_item_original_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bg_5"
+                android:textSize="22dp"
+                 />
+
+            <TextView
+                android:id="@+id/chat_item_see_original"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/see_original"
+                android:textColor="@color/bg_6"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/chat_item_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"          
+            android:textColor="@color/bg_5"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    
+</LinearLayout>

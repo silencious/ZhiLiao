@@ -1,0 +1,49 @@
+* What to use as messaging protocol?
+  1. stomp over websocket
+     - pros :: supportted by spring mvc
+     - cons :: 
+               1. may not flexible enough(to implement features in the
+                  future)
+               2. seems no java client by now(though we can write our
+                  own based on websocket client, not difficult)
+  2. json over websocket
+     - pros :: 
+               1. there're plenty websocket client available
+               2. more flexible
+     - cons :: 
+               the spring mvc API seems to block? see
+               =WebSocketSession.sendMessage()=  If so we have to
+               use other server(jetty), which has no Spring Secirity
+               integrated
+   Currently the second procotol is used.
+   
+* The messaging protocol
+  /NOTE: the following description is on the viewpoint of a client/
+** receiving
+  1. Client receives a WebSocket text frame formatted in json.
+  2. Client deserialize the frame into java object(see server.model.Message)
+  3. There 're three attirbutes in =Message=, some of them may be
+     null.
+     | user | topic | msg            | meaning                                                     |
+     |------+-------+----------------+-------------------------------------------------------------|
+     | 1234 | 1234  | Hello          | user #1234 has sent a message to the topic #1234            |
+     | null | null  | (not used yet) | The server has send you a message, and it's encoded in json |
+
+** sending
+   1. Client prepare the =Message= object, as follows:
+      | user | topic | msg                    | meaning                                    |
+      |------+-------+------------------------+--------------------------------------------|
+      | null | 1234  | Hello                  | client want to send message to topic #1234 |
+      | null | null  | JSON encoded =Request= | See "format of request"                    |
+   2. Client serialize the object into json
+   3. Client send the json as a text frame through WebSocket
+
+** format of request
+   Here 're some formats of =Request=
+   | action      | json                      | meaning                                          |
+   |-------------+---------------------------+--------------------------------------------------|
+   | subscribe   | {"action": "subscribe",   | subscribe the topic #12345, from messageID=12345 |
+   |             | "topic": 12345,           |                                                  |
+   |             | "start":12345}            |                                                  |
+   | unsubscribe | {"action": "unsubscribe", | unsubscribe the topic #12345                     |
+   |             | "topic": 12345}           |                                                  |

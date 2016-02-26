@@ -1,0 +1,6 @@
+bindServicea() is asynchronous, which means that a Binder cannot be used right after the Service is bound. This took me some time to figure out.(though I should have noticed from the start)
+I created new threads for ChatActivity and MainActivity to acquire data from ChatService, using the Binder.
+The thread for ChatActivity has a lifecycle between onStart() and onStop(), which means it doesn't receive data once user has returned to MainActivity.
+The thread for MainActivity has a lifecycle from onCreate() to onDestroy(), given that MainActivity always needs update for new messages, even when it's covered by ChatActivity.
+
+
